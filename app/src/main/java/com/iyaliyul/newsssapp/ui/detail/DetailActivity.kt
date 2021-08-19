@@ -19,10 +19,8 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-        // ? (nullable)= nullable or can be null
-        // !! (bang operator) = cant be null if null DIE
-        // ?: (elvish operator)  = if a is null, otherwise b
-        newsItem = intent.extras?.getParcelable(DETAIL_EXTRA)
+
+        newsItem = intent?.extras?.getParcelable(DETAIL_EXTRA)
         newsItem?.let {
             binding.apply {
                 detailImage.loadImage(it.urlToImage)
@@ -31,5 +29,4 @@ class DetailActivity : AppCompatActivity() {
             }
         }
     }
-
 }

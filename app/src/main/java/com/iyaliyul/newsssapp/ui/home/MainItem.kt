@@ -17,7 +17,6 @@ class MainItem(
             itemName.text = article.title
             itemImage.loadImage(article.urlToImage)
             itemDesc.text = article.description
-
             itemCard.setOnClickListener {
                 onClick(article)
             }

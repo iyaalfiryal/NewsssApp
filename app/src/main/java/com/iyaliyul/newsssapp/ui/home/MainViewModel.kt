@@ -23,6 +23,10 @@ class MainViewModel @Inject constructor(
     private val _newsData = MutableLiveData<Resource<ResponseNews>>()
     val newsData = _newsData
 
+    init {
+        fetchNewsViewModel()
+    }
+
     //nge fecth data
     //ngejalanin coroutine flownya di dalam view model scope
     //viewmodelscope = tempat dimana coroutine ini bakal berjalan.

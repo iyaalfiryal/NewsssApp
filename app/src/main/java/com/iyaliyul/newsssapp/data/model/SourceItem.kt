@@ -5,6 +5,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class SourceItem(
-    val id: String,
-    val name: String
+    val id: String? = null,
+    val name: String = ""
 ): Parcelable
