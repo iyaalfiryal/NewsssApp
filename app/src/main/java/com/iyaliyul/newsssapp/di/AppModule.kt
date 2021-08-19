@@ -12,12 +12,16 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+//buat mengatur function2 apa aja yg mau di provide via dagger hilt,
+//karena kita udh meninjek si api ke dalam repository,
+//api service butuh konfigurasi retrofit,
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
     @Singleton
     @Provides
+    //ini memprovide api,
     fun ProvideAPI(): APIService{
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor()
